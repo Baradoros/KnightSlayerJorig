@@ -2,6 +2,7 @@ package World.Levels;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import com.sun.glass.events.KeyEvent;
@@ -21,7 +22,6 @@ import World.Assets.Tile;
  */
 public class TestLevel extends Level {
 
-   @SuppressWarnings("unused")
    private GameStateManager gsm;
    private ArrayList<Tile> tiles = new ArrayList<Tile>();
    private Player player;
@@ -106,6 +106,11 @@ public class TestLevel extends Level {
       LevelBuilder.drawBox(g, tiles.get(11), 9, 6, 7, 7);
 
    }
+   
+   // LAYERS COLLISION ONTO THE MAP
+   private void buildCollision() {
+      
+   }
 
    @Override
    public void keyPressed(int k) {
@@ -119,6 +124,11 @@ public class TestLevel extends Level {
    @Override
    public void keyReleased(int k) {
       player.keyReleased(k);
+   }
+
+   @Override
+   public Rectangle[] getBounds() {
+      return null;
    }
 
 }

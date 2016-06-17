@@ -2,12 +2,14 @@ package World.Levels;
 
 import java.awt.Graphics2D;
 
+import World.Collidable;
+
 /**
  * Template for all levels and areas.
  * @author Drew
  *
  */
-public abstract class Level {
+public abstract class Level implements Collidable {
    
    public abstract void init();
    public abstract void update();
