@@ -82,6 +82,7 @@ public class TestLevel extends Level {
       g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT);
 
       buildLevel(g);
+      buildCollision();
       player.draw(g);
 
    }
