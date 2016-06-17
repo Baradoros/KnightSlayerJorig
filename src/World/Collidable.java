@@ -9,7 +9,7 @@ import java.awt.Rectangle;
  * @author Drew
  *
  */
-public interface Collision {
+public interface Collidable {
 
    public Rectangle[] getBounds();
 }

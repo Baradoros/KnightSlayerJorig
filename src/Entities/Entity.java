@@ -1,9 +1,8 @@
 package Entities;
 
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 
-import World.Collision;
+import World.Collidable;
 import World.Assets.Assets;
 
 /**
@@ -12,7 +11,7 @@ import World.Assets.Assets;
  * @author Drew
  *
  */
-public abstract class Entity implements Collision {
+public abstract class Entity implements Collidable {
 
    protected float xPos, yPos;
 
