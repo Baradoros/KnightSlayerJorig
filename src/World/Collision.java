@@ -9,7 +9,7 @@ public class Collision {
          for (int j = 0; j < object2.length; j++) {
             if (object1[i].intersects(object2[j])) {
                return true;
-            } else return false;
+            }
          }
       }
       return false;
