@@ -1,7 +1,6 @@
 package Utils;
 
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 
 import World.Assets.Tile;
 
