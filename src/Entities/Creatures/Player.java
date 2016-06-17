@@ -138,6 +138,7 @@ public class Player extends Creature {
 
    @Override
    public Rectangle getBounds() {
-      return new Rectangle();
+      // TODO Auto-generated method stub
+      return null;
    }
 }

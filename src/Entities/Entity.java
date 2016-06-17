@@ -3,6 +3,7 @@ package Entities;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+import World.Collision;
 import World.Assets.Assets;
 
 /**
@@ -11,7 +12,7 @@ import World.Assets.Assets;
  * @author Drew
  *
  */
-public abstract class Entity {
+public abstract class Entity implements Collision {
 
    protected float xPos, yPos;
 
@@ -36,8 +37,6 @@ public abstract class Entity {
       this.yPos = yPos;
    }
    
-   public abstract Rectangle getBounds();
-
    public abstract void update();
 
    public abstract void draw(Graphics2D g);
