@@ -110,7 +110,7 @@ public class TestLevel extends Level {
    
    // LAYERS COLLISION ONTO THE MAP
    private void buildCollision() {
-      
+      // TODO MAKE IT SO
    }
 
    @Override
