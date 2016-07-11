@@ -26,12 +26,12 @@ public class LevelBuilder {
     * @param width
     * @param height
     */
-   public static void addArea(ArrayList<Tile> tiles, BufferedImage sprite, int startRow,
-         int startColumn, int width, int height) {
+   public static void addArea(ArrayList<Tile> tiles, BufferedImage sprite,
+         int startRow, int startColumn, int width, int height, boolean solid) {
 
       for (int i = 0; i < width; i++) {
          for (int j = 0; j < height; j++) {
-            tiles.add(new Tile(sprite, i + startRow, j + startColumn));
+            tiles.add(new Tile(sprite, i + startRow, j + startColumn, solid));
          }
       }
    }
@@ -45,12 +45,12 @@ public class LevelBuilder {
     * @param row
     * @param width
     */
-   public static void addEveryOtherX(ArrayList<Tile> tiles, BufferedImage sprite, int mod, int row,
-         int width) {
+   public static void addEveryOtherX(ArrayList<Tile> tiles,
+         BufferedImage sprite, int mod, int row, int width, boolean solid) {
       // TODO ADD VERTICAL FUNCTIONALITY
       for (int i = 0; i < width; i++) {
          if (i % mod == 0) {
-            tiles.add(new Tile(sprite, i + row, row));
+            tiles.add(new Tile(sprite, i + row, row, solid));
          }
       }
    }
@@ -65,13 +65,13 @@ public class LevelBuilder {
     * @param width
     * @param height
     */
-   public static void addBox(ArrayList<Tile> tiles, BufferedImage sprite, int x, int y, int width,
-         int height) {
+   public static void addBox(ArrayList<Tile> tiles, BufferedImage sprite, int x,
+         int y, int width, int height, boolean solid) {
 
-      addArea(tiles, sprite, x, y + 1, 1, height - 2);
-      addArea(tiles, sprite, x + width - 1, y + 1, 1, height - 2);
-      addArea(tiles, sprite, x, y, width, 1);
-      addArea(tiles, sprite, x, y + height - 1, width, 1);
+      addArea(tiles, sprite, x, y + 1, 1, height - 2, solid);
+      addArea(tiles, sprite, x + width - 1, y + 1, 1, height - 2, solid);
+      addArea(tiles, sprite, x, y, width, 1, solid);
+      addArea(tiles, sprite, x, y + height - 1, width, 1, solid);
 
    }
 
@@ -81,7 +81,7 @@ public class LevelBuilder {
       // TODO MAKE IT SO
       // SEE https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
       // COME BACK WHEN YOU LEARN SOME TRIG, CASUAL
-      
+
    }
 
 }

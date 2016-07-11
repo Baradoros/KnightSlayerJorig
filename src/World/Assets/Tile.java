@@ -17,8 +17,8 @@ public class Tile {
    private int xPos, yPos;
    private BufferedImage sprite;
 
-   public Tile(BufferedImage sprite, int xPos, int yPos) {
-      solid = false;
+   public Tile(BufferedImage sprite, int xPos, int yPos, boolean solid) {
+      this.solid = solid;
       this.sprite = sprite;
       this.xPos = xPos;
       this.yPos = yPos;

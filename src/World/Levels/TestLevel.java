@@ -61,11 +61,13 @@ public class TestLevel extends Level {
    private void buildLevel() {
       // ADD OUTER BOX
       LevelBuilder.addBox(tiles, Assets.darkSquareStone1, 0, 0,
-            GamePanel.WIDTH / Assets.SCALE, GamePanel.HEIGHT / Assets.SCALE);
+            GamePanel.WIDTH / Assets.SCALE, GamePanel.HEIGHT / Assets.SCALE,
+            true);
 
       // ADD INNER LAVA POOL AND BOX
-      LevelBuilder.addArea(tiles, Assets.lava1, 11, 8, 5, 5);
-      LevelBuilder.addBox(tiles, Assets.darkSquareStone1, 10, 7, 7, 7);
+      LevelBuilder.addArea(tiles, Assets.lava1, 10, 8, 5, 5, false);
+      LevelBuilder.addBox(tiles, Assets.darkSquareStone1, 9, 7, 7, 7, true);
+
    }
 
    private void drawLevel(Graphics2D g) {
