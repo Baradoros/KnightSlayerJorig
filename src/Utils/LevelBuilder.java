@@ -1,6 +1,8 @@
 package Utils;
 
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 import World.Assets.Tile;
 
@@ -23,12 +25,12 @@ public class LevelBuilder {
     * @param width
     * @param height
     */
-   public static void drawArea(Graphics2D g, Tile tile, int startRow,
+   public static void drawArea(Graphics2D g, ArrayList<Tile> tiles, BufferedImage sprite, int startRow,
          int startColumn, int width, int height) {
 
       for (int i = 0; i < width; i++) {
          for (int j = 0; j < height; j++) {
-            tile.drawTile(g, i + startRow, j + startColumn);
+            tiles.add(new Tile(sprite, i + startRow, j + startColumn));
          }
       }
    }
