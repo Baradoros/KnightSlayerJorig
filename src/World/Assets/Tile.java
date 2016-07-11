@@ -25,6 +25,7 @@ public class Tile {
 
    }
 
+   // GETTERS AND SETTERS
    public int getxPos() {
       return xPos;
    }
