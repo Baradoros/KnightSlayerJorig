@@ -20,8 +20,8 @@ public class Tile {
    public Tile(BufferedImage sprite, int xPos, int yPos) {
       solid = false;
       this.sprite = sprite;
-      this.xPos = xPos * Assets.SCALE;
-      this.yPos = yPos * Assets.SCALE;
+      this.xPos = xPos;
+      this.yPos = yPos;
 
    }
 
@@ -50,8 +50,8 @@ public class Tile {
    }
 
    // CONVERTS TILE DISTANCE TO PIXELS
-   public void drawTile(Graphics2D g, int xTilePos, int yTilePos) {
-      g.drawImage(sprite, xTilePos * Assets.SCALE, yTilePos * Assets.SCALE,
+   public void drawTile(Graphics2D g) {
+      g.drawImage(sprite, xPos * Assets.SCALE, yPos * Assets.SCALE,
             null);
    }
 
