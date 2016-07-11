@@ -17,5 +17,5 @@ Always write tile positions in terms of grid spaces, not pixels. Conversion
   the draw statement. This is to make it much easier on us when it comes to
   positioning things.
 
-Please JavaDoc everything. If you write a new method, do not push it without a
+Please JavaDoc everything. If you write a new class, do not push it without a
   JavaDoc comment on it.

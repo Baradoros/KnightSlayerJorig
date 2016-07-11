@@ -23,7 +23,7 @@ import World.Assets.Tile;
 public class TestLevel extends Level {
 
    private GameStateManager gsm;
-   private ArrayList<Tile> tiles = new ArrayList<Tile>();
+   private ArrayList<Tile> tiles;
    private Player player;
 
    public TestLevel(GameStateManager gsm) {
@@ -34,6 +34,9 @@ public class TestLevel extends Level {
    @Override
    public void init() {
       Assets.init();
+      tiles = new ArrayList<Tile>();
+      buildLevel();
+      buildCollision();
 
       // INITIALIZE THE PLAYER
       player = new Player(5, 5);
@@ -49,17 +52,21 @@ public class TestLevel extends Level {
       g.setColor(Color.BLACK);
       g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT);
 
-      buildLevel(g);
-      buildCollision();
+      drawLevel(g);
       player.draw(g);
 
    }
 
    // THE BIG ONE
-   private void buildLevel(Graphics2D g) {
+   private void buildLevel() {
+      LevelBuilder.addBox(tiles, Assets.darkSquareStone1, 0, 0,
+            GamePanel.WIDTH, GamePanel.HEIGHT);
+   }
+
+   private void drawLevel(Graphics2D g) {
 
    }
-   
+
    // LAYERS COLLISION ONTO THE MAP
    private void buildCollision() {
       // TODO MAKE IT SO

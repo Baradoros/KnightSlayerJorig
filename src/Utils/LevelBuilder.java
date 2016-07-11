@@ -26,7 +26,7 @@ public class LevelBuilder {
     * @param width
     * @param height
     */
-   public static void drawArea(ArrayList<Tile> tiles, BufferedImage sprite, int startRow,
+   public static void addArea(ArrayList<Tile> tiles, BufferedImage sprite, int startRow,
          int startColumn, int width, int height) {
 
       for (int i = 0; i < width; i++) {
@@ -45,7 +45,7 @@ public class LevelBuilder {
     * @param row
     * @param width
     */
-   public static void drawEveryOtherX(ArrayList<Tile> tiles, BufferedImage sprite, int mod, int row,
+   public static void addEveryOtherX(ArrayList<Tile> tiles, BufferedImage sprite, int mod, int row,
          int width) {
       // TODO ADD VERTICAL FUNCTIONALITY
       for (int i = 0; i < width; i++) {
@@ -65,17 +65,17 @@ public class LevelBuilder {
     * @param width
     * @param height
     */
-   public static void drawBox(ArrayList<Tile> tiles, BufferedImage sprite, int x, int y, int width,
+   public static void addBox(ArrayList<Tile> tiles, BufferedImage sprite, int x, int y, int width,
          int height) {
 
-      drawArea(tiles, sprite, x, y + 1, 1, height - 2);
-      drawArea(tiles, sprite, x + width - 1, y + 1, 1, height - 2);
-      drawArea(tiles, sprite, x, y, width, 1);
-      drawArea(tiles, sprite, x, y + height - 1, width, 1);
+      addArea(tiles, sprite, x, y + 1, 1, height - 2);
+      addArea(tiles, sprite, x + width - 1, y + 1, 1, height - 2);
+      addArea(tiles, sprite, x, y, width, 1);
+      addArea(tiles, sprite, x, y + height - 1, width, 1);
 
    }
 
-   public static void drawCircle(Graphics2D g, Tile tile, int centerX,
+   public static void addCircle(Graphics2D g, Tile tile, int centerX,
          int centerY, int radius) {
 
       // TODO MAKE IT SO
