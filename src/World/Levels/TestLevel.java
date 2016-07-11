@@ -68,6 +68,27 @@ public class TestLevel extends Level {
       LevelBuilder.addArea(tiles, Assets.lava1, 10, 8, 5, 5, false);
       LevelBuilder.addBox(tiles, Assets.darkSquareStone1, 9, 7, 7, 7, true);
 
+      
+     /* // TODO CURRENTLY BREAKS GAME. FIND OUT WHY.
+      // ADD FLOOR
+      
+      // FOR EVERY ROW
+      for (int i = 0; i < GamePanel.HEIGHT / Assets.SCALE; i++) {
+         // FOR EVERY COLUMN
+         for (int j = 0; j < GamePanel.WIDTH / Assets.SCALE; j++) {
+            boolean taken = false;
+            // FOR EVERY TILE IN TILES
+            for (int n = 0; n < tiles.size(); n++) {
+               if (tiles.get(n).getxPos() == i && tiles.get(n).getyPos() == j) {
+                  taken = true;
+                  break;
+               }
+               if (taken == false) {
+                  tiles.add(new Tile(Assets.bossCobblePlain1, i, j, false));
+               }
+            }
+         }
+      }*/
    }
 
    private void drawLevel(Graphics2D g) {
