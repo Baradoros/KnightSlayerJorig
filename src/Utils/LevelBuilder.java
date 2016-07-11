@@ -15,6 +15,7 @@ import World.Assets.Tile;
  */
 public class LevelBuilder {
 
+   // TODO UPDATED ON 7/11/2016. NOT UNIT TESTED YET. CHECK FUNCTIONALITY.
    /**
     * Fills a given area with a tile.
     * 
@@ -25,7 +26,7 @@ public class LevelBuilder {
     * @param width
     * @param height
     */
-   public static void drawArea(Graphics2D g, ArrayList<Tile> tiles, BufferedImage sprite, int startRow,
+   public static void drawArea(ArrayList<Tile> tiles, BufferedImage sprite, int startRow,
          int startColumn, int width, int height) {
 
       for (int i = 0; i < width; i++) {
@@ -44,12 +45,12 @@ public class LevelBuilder {
     * @param row
     * @param width
     */
-   public static void drawEveryOtherX(Graphics2D g, Tile tile, int mod, int row,
+   public static void drawEveryOtherX(ArrayList<Tile> tiles, BufferedImage sprite, int mod, int row,
          int width) {
       // TODO ADD VERTICAL FUNCTIONALITY
       for (int i = 0; i < width; i++) {
          if (i % mod == 0) {
-            tile.drawTile(g, i + row, row);
+            tiles.add(new Tile(sprite, i + row, row));
          }
       }
    }
@@ -64,13 +65,13 @@ public class LevelBuilder {
     * @param width
     * @param height
     */
-   public static void drawBox(Graphics2D g, Tile tile, int x, int y, int width,
+   public static void drawBox(ArrayList<Tile> tiles, BufferedImage sprite, int x, int y, int width,
          int height) {
 
-      drawArea(g, tile, x, y + 1, 1, height - 2);
-      drawArea(g, tile, x + width - 1, y + 1, 1, height - 2);
-      drawArea(g, tile, x, y, width, 1);
-      drawArea(g, tile, x, y + height - 1, width, 1);
+      drawArea(tiles, sprite, x, y + 1, 1, height - 2);
+      drawArea(tiles, sprite, x + width - 1, y + 1, 1, height - 2);
+      drawArea(tiles, sprite, x, y, width, 1);
+      drawArea(tiles, sprite, x, y + height - 1, width, 1);
 
    }
 
@@ -79,7 +80,7 @@ public class LevelBuilder {
 
       // TODO MAKE IT SO
       // SEE https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
-      // COME BACK WHEN YOU LEARN SOME TRIG
+      // COME BACK WHEN YOU LEARN SOME TRIG, CASUAL
       
    }
 
