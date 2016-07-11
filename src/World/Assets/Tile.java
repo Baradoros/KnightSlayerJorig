@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 /**
  * Allows tiles to have properties. Do not paint tiles to the screen without
  * using this class.
+ * 
  * @author Drew
  *
  */
@@ -15,25 +16,49 @@ public class Tile {
    private boolean solid;
    private int xPos, yPos;
    private BufferedImage sprite;
-   
-   
+
    public Tile(BufferedImage sprite, int xPos, int yPos) {
       solid = false;
       this.sprite = sprite;
-      this.xPos = xPos;
-      this.yPos = yPos;
-      
+      this.xPos = xPos * Assets.SCALE;
+      this.yPos = yPos * Assets.SCALE;
+
    }
-   
+
+   public int getxPos() {
+      return xPos;
+   }
+
+   public void setxPos(int xPos) {
+      this.xPos = xPos;
+   }
+
+   public int getyPos() {
+      return yPos;
+   }
+
+   public void setyPos(int yPos) {
+      this.yPos = yPos;
+   }
+
+   public BufferedImage getSprite() {
+      return sprite;
+   }
+
+   public void setSprite(BufferedImage sprite) {
+      this.sprite = sprite;
+   }
+
    // CONVERTS TILE DISTANCE TO PIXELS
    public void drawTile(Graphics2D g, int xTilePos, int yTilePos) {
-      g.drawImage(sprite, xTilePos * Assets.SCALE, yTilePos * Assets.SCALE, null);
+      g.drawImage(sprite, xTilePos * Assets.SCALE, yTilePos * Assets.SCALE,
+            null);
    }
-   
+
    public void setSolid(boolean solid) {
       this.solid = solid;
    }
-   
+
    public boolean isSolid() {
       return solid;
    }
