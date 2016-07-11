@@ -28,7 +28,7 @@ public class Assets {
          darkSquareStone3, darkSquareStone4;
 
    // TODO MAKE SEPARATE INITS FOR EACH GAMESTATE
-   public static void init() {
+   public static void initBossAssets() {
       spriteSheet = new SpriteSheet(ImageLoader.loadImage(
             "/img/SpriteSheets/DungeonCrawl_ProjectUtumnoTileset.png"));
 

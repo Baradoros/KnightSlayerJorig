@@ -33,7 +33,7 @@ public class TestLevel extends Level {
 
    @Override
    public void init() {
-      Assets.init();
+      Assets.initBossAssets();
       tiles = new ArrayList<Tile>();
       buildLevel();
       buildCollision();
@@ -59,12 +59,19 @@ public class TestLevel extends Level {
 
    // THE BIG ONE
    private void buildLevel() {
+      // ADD OUTER BOX
       LevelBuilder.addBox(tiles, Assets.darkSquareStone1, 0, 0,
-            GamePanel.WIDTH, GamePanel.HEIGHT);
+            GamePanel.WIDTH / Assets.SCALE, GamePanel.HEIGHT / Assets.SCALE);
+
+      // ADD INNER LAVA POOL AND BOX
+      LevelBuilder.addArea(tiles, Assets.lava1, 11, 8, 5, 5);
+      LevelBuilder.addBox(tiles, Assets.darkSquareStone1, 10, 7, 7, 7);
    }
 
    private void drawLevel(Graphics2D g) {
-
+      for (int i = 0; i < tiles.size(); i++) {
+         tiles.get(i).drawTile(g);
+      }
    }
 
    // LAYERS COLLISION ONTO THE MAP
