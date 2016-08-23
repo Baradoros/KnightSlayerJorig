@@ -72,7 +72,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
    }
 
    public void run() {
-
       init();
 
       long start;
